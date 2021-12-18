@@ -53,13 +53,18 @@ class Calculator {
     this.operation = undefined
     this.previousOperand = ''
   }
+
+  getDisplayNumber(number) {
+      return number
+  }
+
   updateDisplay() {
-    this.currentOperandTextElement.innerText = this.currentOperand;
+    this.currentOperandTextElement.innerText =
+        this.getDisplayNumber(this.currentOperand)
     if(this.operation != null) {
         this.previousOperandTextElement.innerText = 
-            '${this.previousOperand} ${this.operation}'    
+            '${this.getDisplayNumber(this.currentOperand)} ${this.operation}'    
     }
-    
   }
 }
 
